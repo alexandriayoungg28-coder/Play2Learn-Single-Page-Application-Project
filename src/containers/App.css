@@ -1,0 +1,56 @@
+/* Container that holds your square game cards side-by-side */
+.game-cards-container {
+  display: flex;          
+  flex-direction: row;    
+  flex-wrap: wrap;        
+  justify-content: center; 
+}
+
+/* Your square game card styling */
+.game-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;           
+  margin: 10px;
+  width: 335px;           
+  height: 300px;    
+  text-align: center;
+  font-size: 20px;
+
+  /* Flexbox vertical centering */
+  display: flex;
+  flex-direction: column;  
+  align-items: center;     /* Centers everything horizontally */
+  justify-content: center; /* Centers the whole content block vertically */
+}
+
+/* Add spacing under the titles */
+.game-card h2 {
+  margin-bottom: 10px;
+}
+
+/* Tighten the space under the description paragraphs */
+.game-card p {
+  margin-bottom: 20px;     /* Controls the exact distance before the button starts */
+  font-size: 25px;         /* Slightly smaller text so long text doesn't crowd out the box */
+  line-height: 1.4;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+}
+
+/* Your button styling */
+button {
+  background-color: #73b370;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;      
+}

@@ -1,0 +1,182 @@
+/* Force the container to stack everything strictly top-to-bottom */
+.Start-Page {
+  display: flex;
+  flex-direction: column;  /* Stacks every element vertically */
+  align-items: center;     /* Centers everything horizontally */
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Start-Page h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Label text spacing */
+.Start-Page p[style*="font-weight"] {
+  margin-bottom: 8px;
+  font-size: 21px;
+  letter-spacing: 1px;
+}
+
+/* Sizing and positioning for the input box */
+.Start-Page textarea {
+  display: block;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: none;            
+  width: 80px;             
+  height: 50px !important; 
+  margin: 0 0 25px 0 !important; /* Forces the box to clear horizontal spacing */
+}
+
+/* Instructions container alignment override */
+.Start-Page p:not([style*="font-weight"]) {
+  align-self: flex-start;  /* Overrides the center alignment so lists start left */
+  text-align: left;        
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding-left: 20px;      
+}
+
+/* Stretches the play button to look professional */
+.Start-Page button {
+  width: 100%;             
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  border-radius: 6px;
+}
+
+/* Container alignment and width for the Anagram play page */
+.Play-Page {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 1. Header Layout for Score and Timer */
+/* Pulls the first two inline-styled paragraphs onto the same horizontal row */
+.Play-Page > p:nth-of-type(1),
+.Play-Page > p:nth-of-type(2) {
+  display: inline-block;
+  width: 45%;               /* Splits the header row width between them */
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* 2. Sub-Header for Anagrams Remaining Count */
+.Play-Page > p:nth-of-type(3) {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* 3. Big Target Word Display Box */
+.Play-Page > p:nth-of-type(4) {
+  font-size: 26px;          /* Bumps the core prompt size up significantly */
+  margin: 20px 0;
+  background-color: #f8f9fa; /* Wraps the word in a clean alert badge box */
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px dashed #bbb;
+}
+
+/* 4. Full Width User Text Input Box */
+.Play-Page input[type="text"] {
+  width: 100%;             /* Fits perfectly to the borders of the dashboard */
+  max-width: 350px;
+  height: 45px;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* 5. Clean Layout for Correct Answers Found Section */
+.Play-Page div {
+  background-color: #f1f3f5;
+  padding: 15px 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.Play-Page div p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+/* Formats the bulleted history array list into a neat multi-column grid */
+.Play-Page ul {
+  list-style-type: none;    /* Removes standard default list dots */
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Arranges words into 3 even columns side-by-side */
+  gap: 8px;
+  max-height: 120px;        /* Limits list height if player finds many words */
+  overflow-y: auto;         /* Adds a clean internal scrollbar if words overflow */
+  text-align: center;
+}
+
+.Play-Page li {
+  font-size: 16px;
+  font-weight: 500;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+/* Container layout and padding for the Game Over page */
+.Game-over-Page {
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the main headline title */
+.Game-over-Page h1 {
+  margin-bottom: 25px;
+}
+
+/* Style the "Time's up! You Got" text line */
+.Game-over-Page > p:nth-of-type(1) {
+  font-size: 24px;
+  color: #dc3545;           /* Striking red color for a time out warning */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Style the dynamic score highlight counter */
+.Game-over-Page > p:nth-of-type(2) {
+  font-size: 36px;          /* Makes your performance score display prominent */
+  font-weight: bold;
+  color: #28a745;           /* Classic trophy green accent color */
+  margin-bottom: 35px;
+  background-color: #e9ecef; /* Wraps the final numbers inside a banner badge */
+  padding: 15px 25px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Style your layout action buttons */
+.Game-over-Page button {
+  display: block;           /* Formats buttons to stack vertically rather than side-by-side */
+  width: 100%;             /* Stretches the action hitboxes across the entire card layout */
+  margin: 12px 0;           /* Clean separation spacing between the choices */
+  font-size: 18px;          
+  font-weight: bold;
+  height: 50px;             /* Uniform height for snappy navigation clicks */
+  border-radius: 6px;       /* Sleek corners matching the cards */
+}

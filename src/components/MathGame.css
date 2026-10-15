@@ -1,0 +1,144 @@
+/* ==========================================================================
+   1. MAIN CONTAINER SETUP
+   ========================================================================== */
+.Math-Start-Page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.Math-Start-Page h1 {
+  font-size: 35px;
+  margin: 0 0 20px;
+}
+
+.Math-Start-Page p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.Math-Start-Page select {
+  width: min(100%, 280px);
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+.Math-Start-Page button {
+  width: 100%;
+  max-width: 280px;
+  min-height: 50px;
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Math-Start-Page p:nth-last-child(-n + 4) {
+  align-self: stretch;
+  margin: 8px 0;
+  text-align: left;
+}
+
+.Math-Play-Page {
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. REFINING THE MATH FACTS PROBLEM (0 + 4)
+   ========================================================================== */
+/* Targets the exact paragraph that has NO inline styles applied to it */
+.Math-Play-Page > p:not([style]) {
+  font-size: 56px !important;       /* Scales the equation text up dramatically */
+  font-weight: bold !important;
+  margin: 25px 0 !important;         /* Spacing above and below the problem */
+  display: block !important;
+  
+  /* CRITICAL CLEANUP: Wipes out any ghost outlines, boxes, or shadows */
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-style: none !important;
+}
+
+/* ==========================================================================
+   3. BOTTOM SCORE & TIME INDICATORS
+   ========================================================================== */
+/* Targets only the paragraphs at the very bottom that don't match the capitalized operation header */
+.Math-Play-Page .game-stat {
+  display: inline-block !important;  /* Brings them side-by-side */
+  font-size: 22px !important;          
+  font-weight: bold !important;
+  margin: 15px 10px !important;
+  border: none !important;
+}
+
+/* ==========================================================================
+   4. KEYPAD GRID CLEANUP
+   ========================================================================== */
+/* Forces all keypad buttons back to green and strips inherited grey outlines */
+.Math-Play-Page .keypad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 70px));
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 15px;
+}
+
+.Math-Play-Page .keypad button {
+  height: 60px !important;             
+  font-size: 22px !important;          
+  font-weight: bold !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  margin: 0 !important;                
+  border: none !important;           /* Deletes accidental outline frames */
+  outline: none !important;
+  box-shadow: none !important;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.Math-Play-Page .keypad .clear-button {
+  grid-column: span 2;
+  background-color: red !important;
+  color: white !important;
+}
+
+/* ==========================================================================
+   5. GAME OVER VIEW ISOLATION
+   ========================================================================== */
+.Game-over-Page {
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Isolates the game over text displays */
+.Game-over-Page > p {
+  margin: 10px 0;
+}
+
+/* Formats the final game-over buttons cleanly without leaking backwards */
+.Game-over-Page > button {
+  display: block !important;          
+  width: 100% !important;             
+  margin: 12px 0 !important;           
+  font-size: 18px !important;          
+  font-weight: bold !important;
+  height: 50px !important;             
+  border-radius: 6px !important;       
+  border: none !important;
+}
